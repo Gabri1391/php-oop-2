@@ -2,11 +2,11 @@
 
 class Products
 {
-    public $name;
-    public $image;
-    public $description;
-    public $price;
-    public $discount = 0;
+    protected $name;
+    protected $image;
+    protected $description;
+    protected $price;
+    protected $discount = 0;
 
     //  Costruttore
     public function  __construct($name, $image, $description, $price, $discount)
@@ -40,28 +40,28 @@ class Products
     }
 
     // Metodi SETTER
-    public function setName($name)
+    protected function setName($name)
     {
         if(strlen($name) <= 0) return false;
         $this->name = $name;
         return true;
     }
 
-    public function setImage($image)
+    protected function setImage($image)
     {
         if(!$image) return 'Immagine non disponibile';
         $this->image = $image;
         return true;
     }
 
-    public function setDescription($description)
+    protected function setDescription($description)
     {
         if(!$description) return 'Descrizione non disponibile';
         $this->description = $description;
         return true;
     }
     
-    public function setPrice($price)
+    protected function setPrice($price)
     {
         if(!is_numeric($price) || $price <= 0) return;
         $this->price = $price;
