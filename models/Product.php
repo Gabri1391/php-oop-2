@@ -1,6 +1,6 @@
 <?php
 
-class Products
+class Product
 {
     protected $id;
     protected $name;
@@ -9,8 +9,9 @@ class Products
     
 
     //  Costruttore
-    public function  __construct($name, $description, $price)
-    {
+    public function  __construct($id, $name, $description, $price)
+    {   
+        $this->setId($id);
         $this->setName($name);
         $this->setDescription($description);
         $this->setPrice($price);
@@ -31,7 +32,7 @@ class Products
      */
     public function setId($id)
     {
-        $this->id = uniqid();
+        $this->id = $id;
 
         return $this;
     }

@@ -6,15 +6,14 @@
    {
       private $flavour;
       private $production_country;
-      private $expiration;  
+      private $expiration;
 
 
-      public function  __construct($name, $description, $price, 
-       $flavour, $production_country, $expiration)
+      public function  __construct($id, $name, $description, $price, $flavour, $production_country, $expiration)
       {
-         parent:: __construct($name, $description, $price);
+         parent:: __construct($id, $name, $description, $price);
          $this->setFlavour($flavour);
-         $this->setProduction_country($production_country);
+         $this->setProductionCountry($production_country);
          $this->setExpiration($expiration);
       }
 
